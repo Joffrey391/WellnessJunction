@@ -1,8 +1,13 @@
 import BlogCard from '@/components/BlogCard';
 import { readPostInfo } from '@/lib/helper';
-import { PostApiRes } from '@/utils/types';
 import { InferGetStaticPropsType, GetStaticProps, NextPage } from 'next';
 import { useEffect, useState } from 'react';
+
+type PostApiRes = {
+    title: string;
+    slug: string;
+    meta: string;
+} [];
 
 export const getStaticProps = async () => { 
     //const { postInfo } : PostApiRes = await fetch('http://localhost:3000/api/posts').then(data => data.json());
